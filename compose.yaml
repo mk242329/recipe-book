@@ -1,0 +1,16 @@
+# 開発用 MySQL（本番は Amazon RDS for MySQL 8 を使う）
+name: recipe-app
+
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      TZ: Asia/Tokyo
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:

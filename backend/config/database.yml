@@ -1,0 +1,22 @@
+# 開発: Docker の MySQL（compose.yaml）に接続する
+# 本番: Amazon RDS for MySQL に接続する（接続情報は環境変数で渡す）
+default: &default
+  adapter: trilogy
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV.fetch("DB_HOST") { "127.0.0.1" } %>
+  port: <%= ENV.fetch("DB_PORT") { 3306 } %>
+  username: <%= ENV.fetch("DB_USERNAME") { "root" } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { "password" } %>
+
+development:
+  <<: *default
+  database: recipe_app_development
+
+test:
+  <<: *default
+  database: recipe_app_test
+
+production:
+  <<: *default
+  database: <%= ENV.fetch("DB_NAME") { "recipe_app_production" } %>

@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      recipe: レシピ
+      ingredient: 材料
+      step: 手順
+    attributes:
+      recipe:
+        title: 料理名
+        description: ひとこと説明
+        cooking_time: 調理時間
+        servings: 何人分
+        ingredients: 材料
+        steps: 手順
+      recipe/ingredients:
+        name: 材料名
+        quantity: 分量
+      recipe/steps:
+        position: 手順番号
+        body: 手順の内容

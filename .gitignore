@@ -1,0 +1,14 @@
+.DS_Store
+
+# ---- backend (Rails) ----
+/backend/.bundle
+/backend/log/*
+!/backend/log/.keep
+/backend/tmp/*
+!/backend/tmp/.keep
+/backend/storage/*
+# 秘密鍵は絶対にコミットしない
+/backend/config/master.key
+/backend/.env*
+
+# ---- frontend は frontend/.gitignore で管理 ----
