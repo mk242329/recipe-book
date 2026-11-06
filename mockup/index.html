@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>レシピ一覧 | レシピ帳（モック）</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="mock-bar"><strong>モック｜S-01 レシピ一覧・検索</strong><a href="index.html" aria-current="page">S-01 一覧</a><a href="recipe.html">S-02 詳細</a><a href="new.html">S-03 登録</a><a href="edit.html">S-04 編集</a><a href="signup.html">S-05 ユーザー登録</a><a href="login.html">S-06 ログイン</a><a href="mypage.html">S-07 マイページ</a></div>
+  <header class="header">
+    <a class="logo" href="index.html">🍳 レシピ帳</a>
+    <nav>
+      <a href="index.html">一覧</a>
+      <a href="mypage.html">マイページ</a>
+      <span class="user-name">山田さん</span>
+      <a href="login.html">ログアウト</a>
+      <a class="button" href="new.html">レシピを登録</a>
+    </nav>
+  </header>
+  <main class="main">
+    <h1>レシピ一覧</h1>
+
+    <form class="search" action="index.html">
+      <input type="search" name="q" placeholder="料理名・材料名で検索（例: 鶏肉）">
+      <select name="category" aria-label="カテゴリ">
+        <option value="">すべてのカテゴリ</option>
+        <option>主菜</option>
+        <option>副菜</option>
+        <option>汁物</option>
+        <option>デザート</option>
+      </select>
+      <button type="submit">検索</button>
+    </form>
+    <p class="result-info">全 28 件中 1〜12 件を表示（新しい順）</p>
+
+    <ul class="cards">
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🍛</div>
+          <div class="body">
+            <span class="tag">主菜</span>
+            <h2>親子丼</h2>
+            <p class="desc">甘めのつゆでふわとろに仕上げる定番丼</p>
+            <div class="meta"><span>⏱ 20分</span><span>👥 2人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🥗</div>
+          <div class="body">
+            <span class="tag">副菜</span>
+            <h2>ポテトサラダ</h2>
+            <p class="desc">粒マスタードで大人の味に</p>
+            <div class="meta"><span>⏱ 25分</span><span>👥 4人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🍲</div>
+          <div class="body">
+            <span class="tag">汁物</span>
+            <h2>豚汁</h2>
+            <p class="desc">具だくさんで体があたたまる</p>
+            <div class="meta"><span>⏱ 30分</span><span>👥 4人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🍮</div>
+          <div class="body">
+            <span class="tag">デザート</span>
+            <h2>かぼちゃプリン</h2>
+            <p class="desc">オーブンなしで作れる</p>
+            <div class="meta"><span>⏱ 40分</span><span>👥 4人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb noimage">NO IMAGE</div>
+          <div class="body">
+            <span class="tag">副菜</span>
+            <h2>ほうれん草のおひたし</h2>
+            <p class="desc">5分でできる副菜</p>
+            <div class="meta"><span>⏱ 5分</span><span>👥 2人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🍝</div>
+          <div class="body">
+            <span class="tag">主菜</span>
+            <h2>ナポリタン</h2>
+            <p class="desc">喫茶店風のケチャップ味</p>
+            <div class="meta"><span>⏱ 15分</span><span>👥 1人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🥟</div>
+          <div class="body">
+            <span class="tag">主菜</span>
+            <h2>焼き餃子</h2>
+            <p class="desc">パリッと羽根つき</p>
+            <div class="meta"><span>⏱ 35分</span><span>👥 3人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🍳</div>
+          <div class="body">
+            <span class="tag">副菜</span>
+            <h2>だし巻き卵</h2>
+            <p class="desc">お弁当にもおすすめ</p>
+            <div class="meta"><span>⏱ 10分</span><span>👥 2人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🥣</div>
+          <div class="body">
+            <span class="tag">汁物</span>
+            <h2>ミネストローネ</h2>
+            <p class="desc">野菜をたっぷり食べられる</p>
+            <div class="meta"><span>⏱ 30分</span><span>👥 4人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb noimage">NO IMAGE</div>
+          <div class="body">
+            <span class="tag">デザート</span>
+            <h2>コーヒーゼリー</h2>
+            <p class="desc">ゼラチンで簡単</p>
+            <div class="meta"><span>⏱ 15分</span><span>👥 4人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🐟</div>
+          <div class="body">
+            <span class="tag">主菜</span>
+            <h2>鮭のホイル焼き</h2>
+            <p class="desc">フライパンで蒸し焼き</p>
+            <div class="meta"><span>⏱ 20分</span><span>👥 2人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🥒</div>
+          <div class="body">
+            <span class="tag">副菜</span>
+            <h2>きゅうりの浅漬け</h2>
+            <p class="desc">ポリ袋でもむだけ</p>
+            <div class="meta"><span>⏱ 10分</span><span>👥 2人分</span></div>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <nav class="pagination" aria-label="ページ送り">
+      <span class="disabled">« 前へ</span>
+      <a href="index.html" aria-current="page">1</a>
+      <a href="index.html">2</a>
+      <a href="index.html">3</a>
+      <a href="index.html">次へ »</a>
+    </nav>
+
+    <section class="state-example">
+      <span class="state-label">状態例：レシピが0件のとき</span>
+      <p class="empty">まだレシピがありません。最初のレシピを登録しましょう。</p>
+      <p><a href="new.html">レシピを登録する →</a></p>
+    </section>
+
+    <section class="state-example">
+      <span class="state-label">状態例：検索結果が0件のとき</span>
+      <p class="empty">検索結果がありませんでした</p>
+    </section>
+
+    <section class="state-example">
+      <span class="state-label">状態例：API に接続できないとき</span>
+      <ul class="errors"><li>レシピを読み込めませんでした。時間をおいて再度お試しください。</li></ul>
+    </section>
+  </main>
+</body>
+</html>

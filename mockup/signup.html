@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ユーザー登録 | レシピ帳（モック）</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="mock-bar"><strong>モック｜S-05 ユーザー登録</strong><a href="index.html">S-01 一覧</a><a href="recipe.html">S-02 詳細</a><a href="new.html">S-03 登録</a><a href="edit.html">S-04 編集</a><a href="signup.html" aria-current="page">S-05 ユーザー登録</a><a href="login.html">S-06 ログイン</a><a href="mypage.html">S-07 マイページ</a></div>
+  <header class="header">
+    <a class="logo" href="index.html">🍳 レシピ帳</a>
+    <nav>
+      <a href="index.html">一覧</a>
+      <a href="login.html">ログイン</a>
+      <a class="button" href="new.html">レシピを登録</a>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="auth">
+      <h1>ユーザー登録</h1>
+      <form class="form" action="index.html">
+        <label>
+          <span>名前 <span class="required">必須</span></span>
+          <input type="text" maxlength="20" required placeholder="例: 山田">
+          <span class="hint">20文字以内</span>
+        </label>
+        <label>
+          <span>メールアドレス <span class="required">必須</span></span>
+          <input type="email" required placeholder="you@example.com">
+        </label>
+        <label>
+          <span>パスワード <span class="required">必須</span></span>
+          <input type="password" required minlength="8" maxlength="15">
+          <span class="hint">8文字以上16文字未満（8〜15文字）</span>
+        </label>
+        <button type="submit">登録する</button>
+      </form>
+      <p class="switch">すでにアカウントをお持ちの方は <a href="login.html">ログイン</a></p>
+    </div>
+
+    <section class="state-example">
+      <span class="state-label">状態例：入力エラーのとき</span>
+      <ul class="errors">
+        <li>名前を入力してください</li>
+        <li>メールアドレスはすでに使われています</li>
+        <li>パスワードは8文字以上15文字以内で入力してください</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

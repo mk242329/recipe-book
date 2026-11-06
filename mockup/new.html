@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>レシピ登録 | レシピ帳（モック）</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="mock-bar"><strong>モック｜S-03 レシピ登録</strong><a href="index.html">S-01 一覧</a><a href="recipe.html">S-02 詳細</a><a href="new.html" aria-current="page">S-03 登録</a><a href="edit.html">S-04 編集</a><a href="signup.html">S-05 ユーザー登録</a><a href="login.html">S-06 ログイン</a><a href="mypage.html">S-07 マイページ</a></div>
+  <header class="header">
+    <a class="logo" href="index.html">🍳 レシピ帳</a>
+    <nav>
+      <a href="index.html">一覧</a>
+      <a href="mypage.html">マイページ</a>
+      <span class="user-name">山田さん</span>
+      <a href="login.html">ログアウト</a>
+      <a class="button" href="new.html">レシピを登録</a>
+    </nav>
+  </header>
+  <main class="main">
+    <h1>レシピを登録</h1>
+    <form class="form" action="recipe.html">
+      <label>
+        <span>料理名 <span class="required">必須</span></span>
+        <input type="text" maxlength="50" required  placeholder="例: 親子丼">
+        <span class="hint">50文字以内</span>
+      </label>
+      <label>
+        ひとこと説明
+        <textarea rows="2" maxlength="200" placeholder="例: 甘めのつゆでふわとろに仕上げる定番丼"></textarea>
+        <span class="hint">200文字以内</span>
+      </label>
+      <div class="row">
+        <label>
+          カテゴリ
+          <select>
+            <option value="">選択してください</option>
+            <option>主菜</option>
+            <option>副菜</option>
+            <option>汁物</option>
+            <option>デザート</option>
+          </select>
+        </label>
+        <label>
+          調理時間（分）
+          <input type="number" min="1" max="999"  placeholder="1〜999">
+        </label>
+        <label>
+          何人分
+          <input type="number" min="1" max="20"  placeholder="1〜20">
+        </label>
+      </div>
+      <label>
+        完成写真（1枚）
+        <input type="file" accept="image/*">
+        <span class="hint">未設定のときはダミー画像を表示します</span>
+      </label>
+
+      <fieldset>
+        <legend>材料</legend>
+        <div class="line"><input type="text" maxlength="50" placeholder="材料名（例: 鶏もも肉）" aria-label="材料名"><input class="short" type="text" maxlength="30" placeholder="分量（例: 200g）" aria-label="分量"><button type="button" class="link">削除</button></div>
+        <div class="line"><input type="text" maxlength="50" placeholder="材料名（例: 鶏もも肉）" aria-label="材料名"><input class="short" type="text" maxlength="30" placeholder="分量（例: 200g）" aria-label="分量"><button type="button" class="link">削除</button></div>
+        <button type="button" class="secondary">＋ 材料を追加</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>手順</legend>
+        <div class="line"><span class="step-no">1</span><textarea rows="2" maxlength="500" placeholder="手順を入力（500文字以内）" aria-label="手順1"></textarea><button type="button" class="link">削除</button></div>
+        <button type="button" class="secondary">＋ 手順を追加</button>
+        <span class="hint">手順番号は並び順で自動的に振り直されます</span>
+      </fieldset>
+
+      <div class="actions" style="margin-top:0.5rem">
+        <button type="submit">登録する</button>
+        <a href="index.html" class="button secondary">キャンセル</a>
+      </div>
+    </form>
+
+    <section class="state-example">
+      <span class="state-label">状態例：入力エラーのとき（フォームの上に表示し、入力内容は残す）</span>
+      <ul class="errors">
+        <li>料理名を入力してください</li>
+        <li>調理時間は1〜999の整数で入力してください</li>
+        <li>材料名は50文字以内で入力してください</li>
+      </ul>
+    </section>
+
+    <section class="state-example">
+      <span class="state-label">状態例：保存中（二重送信防止）</span>
+      <p><button type="button" disabled>保存中…</button></p>
+    </section>
+
+    <section class="state-example">
+      <span class="state-label">状態例：未ログインで「レシピを登録」を押したとき</span>
+      <p>登録画面は表示せず、ログイン画面（S-06）へ自動で移動し、「レシピを登録するにはログインが必要です」と表示する。</p>
+      <p><a href="login.html">→ 移動後のログイン画面の表示例を見る</a></p>
+    </section>
+  </main>
+</body>
+</html>

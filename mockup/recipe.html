@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>親子丼 | レシピ帳（モック）</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="mock-bar"><strong>モック｜S-02 レシピ詳細</strong><a href="index.html">S-01 一覧</a><a href="recipe.html" aria-current="page">S-02 詳細</a><a href="new.html">S-03 登録</a><a href="edit.html">S-04 編集</a><a href="signup.html">S-05 ユーザー登録</a><a href="login.html">S-06 ログイン</a><a href="mypage.html">S-07 マイページ</a></div>
+  <header class="header">
+    <a class="logo" href="index.html">🍳 レシピ帳</a>
+    <nav>
+      <a href="index.html">一覧</a>
+      <a href="mypage.html">マイページ</a>
+      <span class="user-name">山田さん</span>
+      <a href="login.html">ログアウト</a>
+      <a class="button" href="new.html">レシピを登録</a>
+    </nav>
+  </header>
+  <main class="main">
+    <article class="detail">
+      <div class="thumb large">🍛</div>
+      <div class="title-row">
+        <h1>親子丼</h1>
+        <button type="button" class="fav on">★ お気に入り済み</button>
+      </div>
+      <p><span class="tag">主菜</span> <span class="author">投稿: 山田さん</span></p>
+      <p>甘めのつゆでふわとろに仕上げる定番丼。</p>
+      <div class="meta"><span>⏱ 20分</span><span>👥 2人分</span></div>
+
+      <h2>材料</h2>
+      <table class="ingredients">
+        <tbody>
+          <tr><td>鶏もも肉</td><td>200g</td></tr>
+          <tr><td>卵</td><td>3個</td></tr>
+          <tr><td>玉ねぎ</td><td>1/2個</td></tr>
+          <tr><td>めんつゆ（3倍濃縮）</td><td>大さじ3</td></tr>
+          <tr><td>ごはん</td><td>2杯分</td></tr>
+        </tbody>
+      </table>
+
+      <h2>作り方</h2>
+      <ol class="steps">
+        <li>鶏肉は一口大に、玉ねぎは薄切りにする。</li>
+        <li>フライパンにめんつゆと水 100ml を入れ、鶏肉と玉ねぎを中火で煮る。</li>
+        <li>溶き卵を回し入れ、半熟になったら火を止めてごはんにのせる。</li>
+      </ol>
+
+      <div class="actions">
+        <a class="button" href="edit.html">編集する</a>
+        <a class="button secondary" href="#delete-dialog" style="color:var(--danger);border-color:var(--danger)">削除する</a>
+      </div>
+      <p class="note">※「編集する」「削除する」は投稿者本人がログインしているときだけ表示。お気に入りボタンはログイン中のみ。</p>
+    </article>
+
+    <!-- 削除確認ダイアログ：「削除する」を押すと表示（CSS の :target で再現） -->
+    <div class="dialog" id="delete-dialog" role="dialog" aria-labelledby="dlg-title">
+      <div class="box">
+        <h2 id="dlg-title" style="margin-top:0">レシピを削除しますか？</h2>
+        <p>「親子丼」を削除します。この操作は取り消せません。</p>
+        <div class="actions">
+          <a class="button secondary" href="#">キャンセル</a>
+          <a class="button danger-fill" href="index.html">OK</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="state-example">
+      <span class="state-label">状態例：お気に入り未登録のとき</span>
+      <p><button type="button" class="fav">☆ お気に入りに追加</button></p>
+    </section>
+
+    <section class="state-example">
+      <span class="state-label">状態例：画像が未設定のとき</span>
+      <div class="thumb large noimage">NO IMAGE</div>
+    </section>
+
+    <section class="state-example">
+      <span class="state-label">状態例：存在しない ID のとき</span>
+      <p class="empty">レシピが見つかりませんでした。</p>
+      <p><a href="index.html">← 一覧に戻る</a></p>
+    </section>
+  </main>
+</body>
+</html>

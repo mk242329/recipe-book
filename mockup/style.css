@@ -1,0 +1,563 @@
+/* frontend/src/app/globals.css をコピーし、モック用の追加分を末尾に足したもの */
+:root {
+  --bg: #faf8f5;
+  --surface: #ffffff;
+  --text: #2b2622;
+  --muted: #7a716a;
+  --border: #e4ddd5;
+  --accent: #c8553d;
+  --accent-text: #ffffff;
+  --danger: #b42318;
+  --error-bg: #fdecea;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1917;
+    --surface: #26221f;
+    --text: #f1ece7;
+    --muted: #a89f97;
+    --border: #3d3732;
+    --accent: #e07a5f;
+    --accent-text: #1c1917;
+    --danger: #f97066;
+    --error-bg: #3b1f1c;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+/* ---- ヘッダー ---- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.header nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* ---- ボタン ---- */
+button,
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+button.danger {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+button.link {
+  background: none;
+  color: var(--muted);
+  padding: 0.25rem;
+  font-weight: 400;
+}
+
+/* ---- 一覧 ---- */
+.cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: block;
+  height: 100%;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+.card h2 {
+  margin: 0 0 0.25rem;
+}
+
+.meta {
+  display: flex;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.empty {
+  color: var(--muted);
+}
+
+/* ---- 詳細 ---- */
+.detail .ingredients {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.detail .ingredients td {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail .ingredients td:last-child {
+  text-align: right;
+  color: var(--muted);
+}
+
+.detail .steps {
+  padding-left: 1.5rem;
+}
+
+.detail .steps li {
+  margin-bottom: 0.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* ---- フォーム ---- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 400;
+}
+
+.form fieldset {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.form legend {
+  font-weight: 600;
+  padding: 0 0.25rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.line {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.line .short {
+  max-width: 8rem;
+}
+
+.step-no {
+  min-width: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.required {
+  font-size: 0.75rem;
+  color: var(--danger);
+}
+
+.errors {
+  list-style: none;
+  padding: 0.75rem 1rem;
+  background: var(--error-bg);
+  color: var(--danger);
+  border-radius: 6px;
+}
+
+/* ======================================================
+   ここからモック用の追加
+   ====================================================== */
+
+/* ---- モック用の帯（画面ID・画面切替） ---- */
+.mock-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  background: #2b2622;
+  color: #f1ece7;
+  font-size: 0.8rem;
+}
+.mock-bar strong {
+  margin-right: 0.5rem;
+}
+.mock-bar a {
+  color: #f1ece7;
+  opacity: 0.75;
+}
+.mock-bar a[aria-current="page"] {
+  opacity: 1;
+  font-weight: 700;
+}
+
+/* 状態例（0件・エラーなど）を並べるための枠 */
+.state-example {
+  margin-top: 3rem;
+  padding: 1rem;
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+}
+.state-label {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  background: var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.note {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* ---- ヘッダー補足 ---- */
+.header nav a {
+  text-decoration: none;
+}
+.user-name {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.header nav button,
+.header nav .button {
+  padding: 0.35rem 0.8rem;
+}
+
+/* ---- 検索バー ---- */
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.search input,
+.search select,
+.form select {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 400;
+}
+.search input {
+  flex: 1;
+  min-width: 12rem;
+}
+.result-info {
+  margin: -0.75rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---- カード（画像つき） ---- */
+.card {
+  padding: 0;
+  overflow: hidden;
+}
+.card .body {
+  padding: 0.75rem 1rem 1rem;
+}
+.card .desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #f3e3d3, #e9c9b0);
+  font-size: 2.5rem;
+}
+.thumb.large {
+  border-radius: 8px;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  max-height: 320px;
+  width: 100%;
+}
+.thumb.noimage {
+  background: repeating-linear-gradient(45deg, var(--border) 0 10px, var(--surface) 10px 20px);
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.tag {
+  display: inline-block;
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  background: var(--error-bg);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ---- ページ送り ---- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-top: 2rem;
+}
+.pagination a,
+.pagination span {
+  min-width: 2.25rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  background: var(--surface);
+}
+.pagination [aria-current="page"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+.pagination .disabled {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+/* ---- 詳細 ---- */
+.title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.title-row h1 {
+  margin: 0;
+}
+.fav {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.fav.on {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+.author {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---- 削除確認ダイアログ（:target で開く。JSなし） ---- */
+.dialog {
+  display: none;
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgb(0 0 0 / 0.45);
+}
+.dialog:target {
+  display: flex;
+}
+.dialog .box {
+  width: 100%;
+  max-width: 360px;
+  padding: 1.25rem;
+  background: var(--surface);
+  border-radius: 10px;
+}
+.dialog .box .actions {
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+}
+.button.secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.button.danger-fill {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* ---- フォーム補足 ---- */
+.form select {
+  width: 100%;
+}
+.form .hint {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.form input[type="file"] {
+  padding: 0.35rem;
+}
+
+/* ---- ログイン・登録 ---- */
+.auth {
+  max-width: 400px;
+  margin: 1rem auto 0;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.auth h1 {
+  text-align: center;
+}
+.auth button {
+  width: 100%;
+}
+.auth .switch {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ---- マイページ ---- */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 2rem 0 0.75rem;
+}
+.section-head h2 {
+  margin: 0;
+}
+
+/* ---- スマホ幅 ---- */
+@media (max-width: 600px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .header nav {
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+  }
+  .row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .line {
+    flex-wrap: wrap;
+  }
+  .line .short {
+    max-width: none;
+    flex: 1;
+  }
+}
+
+/* ログイン画面へ移動してきたときの案内 */
+.info {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background: var(--error-bg);
+  color: var(--accent);
+  font-weight: 600;
+}
