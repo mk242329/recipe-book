@@ -18,11 +18,10 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 
-  # Assume all access to the app is happening through a SSL-terminating reverse proxy.
-  config.assume_ssl = true
-
-  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  # ドメインを用意しないため、本番は Elastic IP に HTTP でアクセスする。
+  # HTTPS（ドメイン + 証明書）を用意したら、環境変数 FORCE_SSL=true で有効にする。
+  config.assume_ssl = ENV["FORCE_SSL"] == "true"
+  config.force_ssl = ENV["FORCE_SSL"] == "true"
 
   # Skip http-to-https redirect for the default health check endpoint.
   # config.ssl_options = { redirect: { exclude: ->(request) { request.path == "/up" } } }
