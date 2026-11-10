@@ -12,3 +12,6 @@
 /backend/.env*
 
 # ---- frontend は frontend/.gitignore で管理 ----
+
+# ---- Claude Code の個人設定（コミットしない） ----
+/.claude/settings.local.json
