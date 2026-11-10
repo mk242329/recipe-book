@@ -561,3 +561,183 @@ button.link {
   color: var(--accent);
   font-weight: 600;
 }
+
+/* ======================================================
+   3カラム（左：絞り込みメニュー／中央：本文／右：ランキング）
+   ====================================================== */
+.layout {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) 260px;
+  gap: 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  align-items: start;
+}
+.layout > .main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+.side-nav,
+.ranking {
+  position: sticky;
+  top: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+.side-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ---- 左：絞り込みメニュー ---- */
+.side-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.side-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.side-nav a:hover {
+  background: var(--bg);
+}
+.side-nav a[aria-current="page"] {
+  background: var(--accent);
+  color: var(--accent-text);
+  font-weight: 700;
+}
+.side-nav .sub {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.75;
+  font-weight: 400;
+}
+
+/* ---- 右：ランキング（ラジオボタンでタブ切替。JSなし） ---- */
+.ranking h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+.ranking > .note {
+  margin-bottom: 0.5rem;
+}
+.ranking input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.rk-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+.rk-tabs label {
+  padding: 0.25rem 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.rk-panel {
+  display: none;
+}
+#rk-all:checked ~ .rk-tabs label[for="rk-all"],
+#rk-fav:checked ~ .rk-tabs label[for="rk-fav"],
+#rk-rec:checked ~ .rk-tabs label[for="rk-rec"],
+#rk-quick:checked ~ .rk-tabs label[for="rk-quick"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 700;
+}
+#rk-all:checked ~ .rk-panels #p-all,
+#rk-fav:checked ~ .rk-panels #p-fav,
+#rk-rec:checked ~ .rk-panels #p-rec,
+#rk-quick:checked ~ .rk-panels #p-quick {
+  display: block;
+}
+.rank-list {
+  list-style: none;
+  counter-reset: rank;
+}
+.rank-list li {
+  counter-increment: rank;
+  border-bottom: 1px solid var(--border);
+}
+.rank-list li:last-child {
+  border-bottom: none;
+}
+.rank-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0;
+  text-decoration: none;
+}
+.rank-list a::before {
+  content: counter(rank);
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: center;
+}
+.rank-list li:nth-child(1) a::before { background: #d4a017; color: #fff; }
+.rank-list li:nth-child(2) a::before { background: #9e9e9e; color: #fff; }
+.rank-list li:nth-child(3) a::before { background: #b87333; color: #fff; }
+.rank-list .name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rank-list .views {
+  flex: none;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+/* ---- 画面幅が狭いとき：左は横並びのタブ、右は本文の下へ ---- */
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+  .side-nav,
+  .ranking {
+    position: static;
+  }
+  .side-nav .side-title,
+  .side-nav .sub {
+    display: none;
+  }
+  .side-nav ul {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .side-nav a {
+    white-space: nowrap;
+  }
+  .layout > .ranking {
+    order: 3;
+  }
+}

@@ -13,6 +13,9 @@
 | ファイル | 画面 |
 | --- | --- |
 | [index.html](index.html) | S-01 レシピ一覧・検索 |
+| [favorites.html](favorites.html) | S-01 の絞り込み：お気に入り |
+| [recommended.html](recommended.html) | S-01 の絞り込み：おすすめレシピ |
+| [quick.html](quick.html) | S-01 の絞り込み：時短レシピ |
 | [recipe.html](recipe.html) | S-02 レシピ詳細（「削除する」で確認ダイアログ） |
 | [new.html](new.html) | S-03 レシピ登録 |
 | [edit.html](edit.html) | S-04 レシピ編集 |
@@ -23,6 +26,7 @@
 ## 見方の注意
 
 - 未実装の機能（検索・カテゴリ・ページ送り・ログイン・画像・お気に入り・マイページ）も、完成したときの形で入れてある。
+- 一覧・詳細の画面では、左に絞り込みメニュー、右に週間ランキングを表示する。ランキングのタブは CSS だけで切り替えている。
 - 0件やエラーなど、表示が変わる場面は、各ページ下の点線の枠「状態例」にまとめてある。
 - JavaScript は使っていない。行の追加・削除や検索は、ボタンの見た目だけ。
 - 色やボタンは `frontend/src/app/globals.css` に合わせてある（`style.css` の前半はそのコピー）。

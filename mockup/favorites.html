@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>お気に入り | レシピ帳（モック）</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="mock-bar"><strong>モック｜S-01 レシピ一覧（お気に入り）</strong><a href="index.html">S-01 一覧</a><a href="recipe.html">S-02 詳細</a><a href="new.html">S-03 登録</a><a href="edit.html">S-04 編集</a><a href="signup.html">S-05 ユーザー登録</a><a href="login.html">S-06 ログイン</a><a href="mypage.html">S-07 マイページ</a></div>
+  <header class="header">
+    <a class="logo" href="index.html">🍳 レシピ帳</a>
+    <nav>
+      <a href="index.html">一覧</a>
+      <a href="mypage.html">マイページ</a>
+      <span class="user-name">山田さん</span>
+      <a href="login.html">ログアウト</a>
+      <a class="button" href="new.html">レシピを登録</a>
+    </nav>
+  </header>
+  <div class="layout">
+    <aside class="side-nav" aria-label="レシピの絞り込み">
+      <p class="side-title">レシピを探す</p>
+      <ul>
+        <li><a href="index.html"><span>📖</span><span>レシピ一覧<span class="sub">新しい順</span></span></a></li>
+        <li><a href="favorites.html" aria-current="page"><span>★</span><span>お気に入り<span class="sub">ログインが必要</span></span></a></li>
+        <li><a href="recommended.html"><span>👍</span><span>おすすめレシピ<span class="sub">お気に入り数が多い順</span></span></a></li>
+        <li><a href="quick.html"><span>⏱</span><span>時短レシピ<span class="sub">調理時間15分以内</span></span></a></li>
+      </ul>
+    </aside>
+    <main class="main">
+    <h1>★ お気に入り</h1>
+    <p class="result-info" style="margin-top:0">自分がお気に入りに登録したレシピ 2 件（登録が新しい順）</p>
+    <ul class="cards">
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🥗</div>
+          <div class="body">
+            <span class="tag">副菜</span>
+            <h2>ポテトサラダ</h2>
+            <p class="desc">粒マスタードで大人の味に</p>
+            <div class="meta"><span>⏱ 25分</span><span>👥 4人分</span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="recipe.html">
+          <div class="thumb">🍮</div>
+          <div class="body">
+            <span class="tag">デザート</span>
+            <h2>かぼちゃプリン</h2>
+            <p class="desc">オーブンなしで作れる</p>
+            <div class="meta"><span>⏱ 40分</span><span>👥 4人分</span></div>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <section class="state-example">
+      <span class="state-label">状態例：お気に入りが0件のとき</span>
+      <p class="empty">お気に入りはまだありません。レシピ詳細の「☆ お気に入りに追加」から登録できます。</p>
+    </section>
+
+    <section class="state-example">
+      <span class="state-label">状態例：未ログインで「お気に入り」を押したとき</span>
+      <p>ログイン画面（S-06）へ自動で移動し、「お気に入りを見るにはログインが必要です」と表示する（レシピ登録と同じ動き）。</p>
+    </section>
+    </main>
+    <aside class="ranking" aria-label="週間ランキング">
+      <h2>🏆 週間ランキング</h2>
+      <p class="note">ここ1週間でよく見られたレシピ</p>
+      <input type="radio" name="rk" id="rk-all">
+      <input type="radio" name="rk" id="rk-fav" checked>
+      <input type="radio" name="rk" id="rk-rec">
+      <input type="radio" name="rk" id="rk-quick">
+      <div class="rk-tabs">
+        <label for="rk-all">すべて</label>
+        <label for="rk-fav">お気に入り</label>
+        <label for="rk-rec">おすすめ</label>
+        <label for="rk-quick">時短</label>
+      </div>
+      <div class="rk-panels">
+        <div class="rk-panel" id="p-all">
+          <ol class="rank-list">
+            <li><a href="recipe.html"><span class="name">親子丼</span><span class="views">👁 1,240回</span></a></li>
+            <li><a href="recipe.html"><span class="name">豚汁</span><span class="views">👁 980回</span></a></li>
+            <li><a href="recipe.html"><span class="name">ナポリタン</span><span class="views">👁 860回</span></a></li>
+            <li><a href="recipe.html"><span class="name">焼き餃子</span><span class="views">👁 720回</span></a></li>
+            <li><a href="recipe.html"><span class="name">かぼちゃプリン</span><span class="views">👁 650回</span></a></li>
+          </ol>
+        </div>
+        <div class="rk-panel" id="p-fav">
+          <ol class="rank-list">
+            <li><a href="recipe.html"><span class="name">かぼちゃプリン</span><span class="views">👁 650回</span></a></li>
+            <li><a href="recipe.html"><span class="name">ポテトサラダ</span><span class="views">👁 540回</span></a></li>
+          </ol>
+          <p class="note">自分のお気に入りの中のランキング。ログインしていないときは「ログインするとお気に入りのランキングが表示されます」と表示</p>
+        </div>
+        <div class="rk-panel" id="p-rec">
+          <ol class="rank-list">
+            <li><a href="recipe.html"><span class="name">親子丼</span><span class="views">👁 1,240回</span></a></li>
+            <li><a href="recipe.html"><span class="name">焼き餃子</span><span class="views">👁 720回</span></a></li>
+            <li><a href="recipe.html"><span class="name">ポテトサラダ</span><span class="views">👁 540回</span></a></li>
+            <li><a href="recipe.html"><span class="name">ミネストローネ</span><span class="views">👁 410回</span></a></li>
+            <li><a href="recipe.html"><span class="name">鮭のホイル焼き</span><span class="views">👁 380回</span></a></li>
+          </ol>
+        </div>
+        <div class="rk-panel" id="p-quick">
+          <ol class="rank-list">
+            <li><a href="recipe.html"><span class="name">ナポリタン</span><span class="views">👁 860回</span></a></li>
+            <li><a href="recipe.html"><span class="name">だし巻き卵</span><span class="views">👁 470回</span></a></li>
+            <li><a href="recipe.html"><span class="name">ほうれん草のおひたし</span><span class="views">👁 320回</span></a></li>
+            <li><a href="recipe.html"><span class="name">きゅうりの浅漬け</span><span class="views">👁 290回</span></a></li>
+            <li><a href="recipe.html"><span class="name">コーヒーゼリー</span><span class="views">👁 210回</span></a></li>
+          </ol>
+        </div>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
